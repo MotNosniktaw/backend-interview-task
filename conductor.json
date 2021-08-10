@@ -1,0 +1,17 @@
+{
+    "admin": {
+        "command": "npm",
+        "args": ["run","develop"],
+        "cwd": "./admin"
+    },
+    "investments": {
+        "command": "npm",
+        "args":["run", "develop"],
+        "cwd":"./investments"
+    },
+    "companies": {
+        "command": "npm",
+        "args":["run", "develop"],
+        "cwd":"./financial-companies"
+    }
+}
