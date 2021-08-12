@@ -8,16 +8,21 @@ module.exports = {
    */
   createHoldingsReportCSV: (holdings) => {
     // TODO Implement nonblocking async stream based API for json-csv parsing
-    const fields = [
-      "User",
-      "First Name",
-      "Last Name",
-      "Date",
-      "Holding",
-      "Value",
-    ];
-    const opts = { fields };
-    const parser = new Parser(opts);
-    return parser.parse(holdings);
+    try {
+      const fields = [
+        "User",
+        "First Name",
+        "Last Name",
+        "Date",
+        "Holding",
+        "Value",
+      ];
+      const opts = { fields };
+      const parser = new Parser(opts);
+      return parser.parse(holdings);
+    } catch (e) {
+      console.error(e);
+      throw "Unable to generate csv holdings report.";
+    }
   },
 };
