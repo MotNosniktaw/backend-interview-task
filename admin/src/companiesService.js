@@ -27,8 +27,9 @@ const getCompanies = async () => {
  * @returns {string} Name of desired company
  */
 const getCompanyNameFromCompanyId = (companies, id) => {
-  const company = companies.filter((c) => c.id == id)[0];
-  return company.name;
+  const company = companies.find((c) => c.id == id);
+  if (company == null) throw "No company found with provided id.";
+  return company?.name;
 };
 
 module.exports = {
