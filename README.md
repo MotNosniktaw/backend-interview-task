@@ -69,3 +69,4 @@ Financial Companies - localhost:8082
 
 Admin - localhost:8083
 - `/investments/:id` get an investment record by id
+- `/users/holdings/report` send a report of all holdings to the export endpoint in the Investments API
